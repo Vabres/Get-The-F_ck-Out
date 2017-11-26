@@ -19,6 +19,7 @@ public class PlayerMoveScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         if (GetComponent<Rigidbody>().velocity.magnitude < MaxSpeed)
         {
             if (Input.GetKey(KeyCode.Z))

@@ -21,7 +21,7 @@ public class TraqueScript1 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (cible.remainingDistance < 4)
+        if (cible.remainingDistance < 2)
         {
             R = Random.Range(0, RdmDestination.Length);
             cible.destination = RdmDestination[R].position;
