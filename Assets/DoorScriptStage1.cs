@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoorScriptStage1 : MonoBehaviour {
 
     public MeshRenderer Toit;
-    public Transform Hound;
+    public Transform Skeleton;
 	// Use this for initialization
 	void Start () {
     }
@@ -14,9 +14,9 @@ public class DoorScriptStage1 : MonoBehaviour {
     {
         //Debug.Log("collision !");
 
-        if (Hound != null)
+        if (Skeleton != null)
         {
-            Hound.GetComponent<TraqueScript1>().enabled = true;
+            Skeleton.GetComponent<TraqueScript1>().enabled = true;
         }
 
         if (other.tag == "Player")
