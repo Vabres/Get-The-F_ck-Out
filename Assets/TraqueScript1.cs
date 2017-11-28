@@ -7,25 +7,53 @@ using UnityEngine.AI;
 public class TraqueScript1 : MonoBehaviour {
 
     public Transform[] RdmDestination;
-    public NavMeshAgent cible;
+    public NavMeshAgent Cible;
     public int R;
+    public bool Attack = false, IsWalking = false;
+    public Rigidbody RigiSkeleton;
+    public Animator AniSkeleton;
 
 	// Use this for initialization
 	void Start () {
         //PositionHero = GetComponent<Transform>();
-        cible = GetComponent<NavMeshAgent>();
-        cible.destination = RdmDestination[R].localPosition;
+        Cible = GetComponent<NavMeshAgent>();
+        RigiSkeleton = GetComponent<Rigidbody>();
+        AniSkeleton = GetComponent<Animator>();
     }
 
-
-	
-	// Update is called once per frame
-	void Update () {
-        if (cible.remainingDistance < 2)
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
         {
+            Attack = true;
+            other.GetComponent<PlayerMovementScript>().enabled = false;
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
+            other.GetComponent<CapsuleCollider>().enabled = false;
+            AniSkeleton.SetTrigger("Attack");
+            other.GetComponent<Transform>().GetChild(1).GetComponent<GestionBruitScript>().enabled = false;
             R = Random.Range(0, RdmDestination.Length);
-            cible.destination = RdmDestination[R].position;
+            Cible.destination = RdmDestination[R].position;
         }
 
+    }
+
+    // Update is called once per frame
+    void Update () {
+        if (Cible.remainingDistance < 2)
+        {
+            R = Random.Range(0, RdmDestination.Length);
+            Cible.destination = RdmDestination[R].position;
+        }
+
+        if (RigiSkeleton.velocity.magnitude > 2)
+        {
+            IsWalking = true;
+        }
+        else
+        {
+            IsWalking = false;
+        }
+        AniSkeleton.SetBool("IsWalking", IsWalking);
     }
 }
