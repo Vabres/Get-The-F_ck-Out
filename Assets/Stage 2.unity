@@ -1987,6 +1987,46 @@ Transform:
   m_Father: {fileID: 1703965914}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &639965214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 639965216}
+  - component: {fileID: 639965215}
+  m_Layer: 0
+  m_Name: InfoHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &639965215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639965214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5eaa00f0390e1fa4c956aa0a7010436f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &639965216
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 639965214}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.099286, y: -43.599297, z: -13.329812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &640653948
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,6 +2367,7 @@ MonoBehaviour:
   IsWalking: 0
   RigiSkeleton: {fileID: 0}
   AniSkeleton: {fileID: 0}
+  Distance: 0
 --- !u!195 &710281497
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3593,6 +3634,7 @@ MonoBehaviour:
   IsWalking: 0
   RigiSkeleton: {fileID: 0}
   AniSkeleton: {fileID: 0}
+  Distance: 0
 --- !u!135 &1023532758
 SphereCollider:
   m_ObjectHideFlags: 0

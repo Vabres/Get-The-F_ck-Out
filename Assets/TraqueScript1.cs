@@ -12,6 +12,8 @@ public class TraqueScript1 : MonoBehaviour {
     public bool Attack = false, IsWalking = false;
     public Rigidbody RigiSkeleton;
     public Animator AniSkeleton;
+    public float Distance;
+
 
 	// Use this for initialization
 	void Start () {
@@ -38,8 +40,19 @@ public class TraqueScript1 : MonoBehaviour {
 
     }
 
+    void GetRandomPosition() //Sert à trouver un point au hasard sur le NavMesh
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * Distance;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomDirection, out hit, Distance, 1);
+        Vector3 finalPosition = hit.position;
+        GetComponent<NavMeshAgent>().destination = finalPosition;
+
+    }
+
     // Update is called once per frame
-    void Update () {
+    void Update () {/*
         if (Cible.remainingDistance < 2)
         {
             R = Random.Range(0, RdmDestination.Length);
@@ -54,6 +67,7 @@ public class TraqueScript1 : MonoBehaviour {
         {
             IsWalking = false;
         }
-        AniSkeleton.SetBool("IsWalking", IsWalking);
+        AniSkeleton.SetBool("IsWalking", IsWalking);*/
+
     }
 }
