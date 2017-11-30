@@ -9,6 +9,8 @@ public class PlayerMovementScript : MonoBehaviour {
     public float MaxSpeed;
     public Rigidbody RigiPlayer;
     public Transform Camera;
+    public float Valeur;
+    private int NbTresors;
 
     // Use this for initialization
     void Start () {
@@ -56,6 +58,12 @@ public class PlayerMovementScript : MonoBehaviour {
             if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.S))
             {
                 RigiPlayer.AddForce(transform.forward * SpeedMovement);
+            }
+
+            RaycastHit hit;
+            if(Physics.Raycast(transform.position, transform.forward, out hit) && hit.transform.gameObject.tag == "Tresor")
+            {
+
             }
         }
     }

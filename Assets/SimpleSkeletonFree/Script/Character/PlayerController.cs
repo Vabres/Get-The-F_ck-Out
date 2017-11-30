@@ -31,8 +31,7 @@ namespace SkeletonEditor
         void Start() {
             animator = GetComponent<Animator>();
             initRotation = transform.rotation;
-
-          
+            
             animations = new List<string>()
             {
                 "Hit1",

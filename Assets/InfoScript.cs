@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InfoScript : MonoBehaviour {
+public class InfoScript : MonoBehaviour
+{
 
 
     public string Difficulty;
     public int CurrentLife;
 
-	// Use this for initialization
-	
+    // Use this for initialization
+
 
     private void Awake()
     {
@@ -22,7 +23,8 @@ public class InfoScript : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update()
+    {
+
+    }
 }

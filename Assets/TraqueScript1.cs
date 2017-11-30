@@ -69,5 +69,9 @@ public class TraqueScript1 : MonoBehaviour {
         }
         AniSkeleton.SetBool("IsWalking", IsWalking);*/
 
+        if (Cible.remainingDistance < 2)
+        {
+            GetRandomPosition();
+        }
     }
 }

@@ -7,6 +7,7 @@ public class GestionBruitScript : MonoBehaviour {
 
     public SphereCollider ZoneDeBruit;
     public int Diametre;
+    public ParticleSystem Particles;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +29,13 @@ public class GestionBruitScript : MonoBehaviour {
         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D))
         {
             ZoneDeBruit.radius = Diametre;
+            Particles.Play();
+
         }
         else
         {
             ZoneDeBruit.radius = 0.5f;
+            Particles.Stop();
         }
     }
 }
