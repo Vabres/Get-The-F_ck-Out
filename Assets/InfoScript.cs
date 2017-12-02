@@ -6,9 +6,9 @@ public class InfoScript : MonoBehaviour
 {
 
 
-    public string Difficulty;
-    public int CurrentLife;
-
+    //public string Difficulty;
+    //public int CurrentLife;
+    public int Score;
     // Use this for initialization
 
 
@@ -19,7 +19,7 @@ public class InfoScript : MonoBehaviour
 
     void Start()
     {
-        PlayerPrefs.SetInt("Life", CurrentLife); //sert à sauvegarder entre chaque lancement du jeu
+        PlayerPrefs.SetInt("Tresor", Score); //sert à sauvegarder entre chaque lancement du jeu
     }
 
     // Update is called once per frame

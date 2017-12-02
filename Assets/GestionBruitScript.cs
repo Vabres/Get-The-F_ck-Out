@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class GestionBruitScript : MonoBehaviour {
 
     public SphereCollider ZoneDeBruit;
-    public int Diametre;
+    public float Diametre;
     public ParticleSystem Particles;
 
 	// Use this for initialization
@@ -25,10 +25,11 @@ public class GestionBruitScript : MonoBehaviour {
 
 
     // Update is called once per frame
-    void Update () {
+    void FixedUpdate () {
         if (Input.GetKey(KeyCode.Z) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Q) || Input.GetKey(KeyCode.D))
         {
             ZoneDeBruit.radius = Diametre;
+            Particles.startSize = Diametre * 3;
             Particles.Play();
 
         }

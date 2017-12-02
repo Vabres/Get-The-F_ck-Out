@@ -33,7 +33,7 @@ public class TraqueScript1 : MonoBehaviour {
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
             other.GetComponent<CapsuleCollider>().enabled = false;
             AniSkeleton.SetTrigger("Attack");
-            other.GetComponent<Transform>().GetChild(1).GetComponent<GestionBruitScript>().enabled = false;
+            other.GetComponent<Transform>().GetChild(0).GetComponent<GestionBruitScript>().enabled = false;
             R = Random.Range(0, RdmDestination.Length);
             Cible.destination = RdmDestination[R].position;
         }
@@ -52,7 +52,7 @@ public class TraqueScript1 : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {/*
+    void Update () {
         if (Cible.remainingDistance < 2)
         {
             R = Random.Range(0, RdmDestination.Length);
@@ -67,11 +67,11 @@ public class TraqueScript1 : MonoBehaviour {
         {
             IsWalking = false;
         }
-        AniSkeleton.SetBool("IsWalking", IsWalking);*/
+        AniSkeleton.SetBool("IsWalking", IsWalking);
 
-        if (Cible.remainingDistance < 2)
+       /* if (Cible.remainingDistance < 2)
         {
             GetRandomPosition();
-        }
+        }*/
     }
 }

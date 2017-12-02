@@ -6,15 +6,17 @@ public class PlayerMovementScript : MonoBehaviour {
 
 
     public int SpeedMovement;
-    public float MaxSpeed;
+    public float MaxSpeed, FacteurPoids, FacteurSon;
     public Rigidbody RigiPlayer;
     public Transform Camera;
-    public float Valeur;
-    private int NbTresors;
+    public int NbTresors;
+    public GameObject ToucheE;
+    public GestionBruitScript Cube;
 
     // Use this for initialization
     void Start () {
         RigiPlayer = GetComponent<Rigidbody>();
+        NbTresors = PlayerPrefs.GetInt("Tresors", 0);
 	}
 	
 	// Update is called once per frame
@@ -59,12 +61,30 @@ public class PlayerMovementScript : MonoBehaviour {
             {
                 RigiPlayer.AddForce(transform.forward * SpeedMovement);
             }
-
-            RaycastHit hit;
-            if(Physics.Raycast(transform.position, transform.forward, out hit) && hit.transform.gameObject.tag == "Tresor")
+        }
+        RaycastHit hit;
+        Physics.Raycast(transform.position, transform.forward, out hit);
+        if (hit.transform.gameObject.tag == "Tresor" && hit.distance < 5)
+        {
+            ToucheE.SetActive(true);
+            //Debug.Log(hit.transform.tag);
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                NbTresors += 1;
+                hit.transform.gameObject.SetActive(false);
+                Cube.Diametre += FacteurSon ;
 
             }
         }
+        else
+        {
+            ToucheE.SetActive(false);
+
+        }
+        //Debug.DrawRay(transform.position, transform.forward * 20, Color.red);
+
+        RigiPlayer.mass = 1 + NbTresors * FacteurPoids;
+
+
     }
 }
