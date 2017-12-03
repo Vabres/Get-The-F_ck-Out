@@ -21,10 +21,11 @@ public class PortailScript : MonoBehaviour {
 
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            PlayerPrefs.SetInt("Tresors", other.transform.GetComponent<PlayerMovementScript>().NbTresors);
             EndLvl = true;
             PlsWait.SetActive(true);
             /*if (!loadNxtLvl.isDone)

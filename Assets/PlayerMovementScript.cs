@@ -19,7 +19,8 @@ public class PlayerMovementScript : MonoBehaviour {
     void Start () {
         RigiPlayer = GetComponent<Rigidbody>();
         NbTresors = PlayerPrefs.GetInt("Tresors", 0);
-	}
+        Score.text = NbTresors + "0 000 $";
+    }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -76,6 +77,7 @@ public class PlayerMovementScript : MonoBehaviour {
                 hit.transform.gameObject.SetActive(false);
                 Cube.Diametre += FacteurSon ;
                 Score.text = NbTresors + "0 000 $";
+                Debug.Log(NbTresors + "0 000 $");
             }
         }
         else
