@@ -7,11 +7,11 @@ public class PlayerMovementScript : MonoBehaviour {
 
 
     public int SpeedMovement;
-    public float MaxSpeed, FacteurPoids, FacteurSon;
+    public float MaxSpeed, FacteurSon;
     public Rigidbody RigiPlayer;
     public Transform Camera;
     public int NbTresors;
-    public GameObject ToucheE;
+    public GameObject ToucheE, TextGameOver;
     public GestionBruitScript Cube;
     public Text Score;
 
@@ -76,8 +76,9 @@ public class PlayerMovementScript : MonoBehaviour {
                 NbTresors += 1;
                 hit.transform.gameObject.SetActive(false);
                 Cube.Diametre += FacteurSon ;
+                NbTresors = NbTresors + NbTresors;
                 Score.text = NbTresors + "0 000 $";
-                Debug.Log(NbTresors + "0 000 $");
+                //Debug.Log(NbTresors + "0 000 $");
             }
         }
         else
@@ -87,7 +88,7 @@ public class PlayerMovementScript : MonoBehaviour {
         }
         //Debug.DrawRay(transform.position, transform.forward * 20, Color.red);
 
-        RigiPlayer.mass = 1 + NbTresors * FacteurPoids;
+
 
 
     }

@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 20610902460830444}
   - component: {fileID: 124239918927190676}
   - component: {fileID: 81915214101578090}
+  - component: {fileID: 114325786281220916}
   m_Layer: 0
   m_Name: Player Camera
   m_TagString: Untagged
@@ -106,7 +107,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1045346355249132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.169073, y: 1.64, z: -17.12947}
+  m_LocalPosition: {x: 21.2, y: 1.64, z: -17.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4264372529585444}
@@ -279,6 +280,18 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1826973814910234}
   m_Enabled: 1
+--- !u!114 &114325786281220916
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1826973814910234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  profile: {fileID: 11400000, guid: 0a7b892a59c198a49a36c8cf233d5740, type: 2}
 --- !u!114 &114413615359410866
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,12 +319,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedMovement: 20
   MaxSpeed: 20
-  FacteurPoids: 0
   FacteurSon: 0.5
   RigiPlayer: {fileID: 0}
   Camera: {fileID: 4398508760317742}
   NbTresors: 0
   ToucheE: {fileID: 0}
+  TextGameOver: {fileID: 0}
   Cube: {fileID: 114413615359410866}
   Score: {fileID: 0}
 --- !u!124 &124239918927190676

@@ -28,6 +28,7 @@ public class TraqueScript1 : MonoBehaviour {
         if(other.tag == "Player")
         {
             Attack = true;
+            other.GetComponent<PlayerMovementScript>().TextGameOver.SetActive(true);
             other.GetComponent<PlayerMovementScript>().enabled = false;
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePosition;
