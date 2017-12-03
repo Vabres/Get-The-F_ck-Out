@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovementScript : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class PlayerMovementScript : MonoBehaviour {
     public int NbTresors;
     public GameObject ToucheE;
     public GestionBruitScript Cube;
+    public Text Score;
 
     // Use this for initialization
     void Start () {
@@ -73,7 +75,7 @@ public class PlayerMovementScript : MonoBehaviour {
                 NbTresors += 1;
                 hit.transform.gameObject.SetActive(false);
                 Cube.Diametre += FacteurSon ;
-
+                Score.text = NbTresors + "0 000 $";
             }
         }
         else

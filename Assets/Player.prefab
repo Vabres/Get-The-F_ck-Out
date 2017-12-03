@@ -106,7 +106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1045346355249132}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 380.38, y: -69.26, z: 260.26}
+  m_LocalPosition: {x: 21.169073, y: 1.64, z: -17.12947}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4264372529585444}
@@ -313,6 +313,7 @@ MonoBehaviour:
   NbTresors: 0
   ToucheE: {fileID: 0}
   Cube: {fileID: 114413615359410866}
+  Score: {fileID: 0}
 --- !u!124 &124239918927190676
 Behaviour:
   m_ObjectHideFlags: 1
