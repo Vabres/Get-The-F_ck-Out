@@ -14,15 +14,16 @@ public class DoorScriptStage1 : MonoBehaviour {
     {
         //Debug.Log("collision !");
 
-        if (Skeleton != null)
-        {
-            Skeleton.GetComponent<TraqueScript1>().enabled = true;
-        }
+
 
         if (other.tag == "Player")
         {
             GetComponent<MeshRenderer>().enabled = false;
             Toit.enabled = false;
+            if (Skeleton != null)
+            {
+                Skeleton.GetComponent<TraqueScript1>().enabled = true;
+            }
         }
     }
 
